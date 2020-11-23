@@ -115,5 +115,5 @@ console.log("If your Score is Higher then the Top scorers then share the screens
 console.log("-----------------------------");
 
 
-console.log(chalk.bold.bgWhiteBright("Thank You for Playing this Quiz!"));
+console.log(chalk.bold.bgWhiteBright.black("Thank You for Playing this Quiz! \n Have a nice day!"));
 
