@@ -3,17 +3,17 @@ var readlineSync = require("readline-sync");
 var chalk = require('chalk');
 
 var score =0;
-//Data of Highscore
 
+//Data of Highscore
 
 var highscore = [
   {
   name :"Shrey",
-  score:"5"
+  score:"100"
   },
   {
-  name :"XYz",
-  score:"4"
+  name :"Harsh",
+  score:"90"
   }]
   
 
@@ -24,9 +24,9 @@ console.log(chalk.bgCyan("Welcome to a Quiz on Do You Know About Shrey! "))
 var userName = readlineSync.question("What is your name? ");
 
 
-console.log("Welcome "+chalk.redBright(userName.toUpperCase())+"!");
+console.log("Welcome "+chalk.redBright.underline(userName.toUpperCase())+"!");
 
-console.log("Let's Start");
+console.log("OK, Let's Start\n");
 
 //play function
 
@@ -34,9 +34,9 @@ function play(question ,answer){
 
   var userAnswer = readlineSync.question(question);
 
-  if(userAnswer===answer){
+  if(userAnswer.toLocaleUpperCase() ===answer.toLocaleUpperCase()){
     console.log(chalk.bgGreenBright("Right!"));
-    score+=1;
+    score+=10;
     }
   else{
     console.log(chalk.bgRedBright("Wrong!"));
@@ -44,20 +44,17 @@ function play(question ,answer){
   }
 
   console.log("Current Score: ",score)
-  console.log("-------------")
+  console.log("----------------------")
   
 }
 
-//play("Where Do i Live?" ,"Banglore")
-
-//play("Who is your Favourite Superhero?" ,"Superman")
 
 var questions =[{
   question: "Where Do Shrey Live ?",
   answer :"lucknow"
 }, {
   question:"What is Shrey's favourite superhero?",
-  answer : "superman"
+  answer : "johnwick"
 },
 {
    question:"From Where did Shrey completed his class 12th?",
@@ -68,8 +65,28 @@ var questions =[{
   answer : "black"
 },
 {
-   question:"Is Shrey is married?",
-  answer : "no"
+   question:"Do Shrey have any Siblings?",
+  answer : "yes"
+},
+{
+  question:"Shrey spends his most of the time on which social media platform ?",
+ answer : "instagram"
+},
+{
+  question:"Shrey is Tea or a Coffee person?",
+ answer : "coffee"
+},
+{
+  question:"Shrey's favourite sports?",
+ answer : "cricket"
+},
+{
+  question:"Shrey's favourite IPL Team?",
+ answer : "KKR"
+},
+{
+  question:"Shrey was born in which year?",
+ answer : "2002"
 }
 
 ];
@@ -98,5 +115,5 @@ console.log("If your Score is Higher then the Top scorers then share the screens
 console.log("-----------------------------");
 
 
-console.log(chalk.bold("Thank You for Playing this Quiz!"));
+console.log(chalk.bold.bgWhiteBright("Thank You for Playing this Quiz!"));
 
